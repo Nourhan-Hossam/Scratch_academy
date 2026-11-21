@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Scratch Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F8FC;--ink:#26225F;--mut:#5b5a7a;--card:#fff;--line:#E3E5F2;--or:#FF8C1A;--bl:#4C97FF;--pu:#9966FF;--ye:#FFBF00;--cy:#DDF3F7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1b45;--ink:#F4F3FF;--mut:#b9b7dc;--card:#29265c;--line:#3d3a78;--cy:#2a3a66}}
+:root[data-theme="dark"]{--bg:#1d1b45;--ink:#F4F3FF;--mut:#b9b7dc;--card:#29265c;--line:#3d3a78;--cy:#2a3a66}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:'Cairo',system-ui,sans-serif;line-height:1.6;font-size:18px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:9;border-bottom:3px solid var(--or);display:flex;align-items:center;gap:20px;padding:10px 5vw;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;direction:ltr}
+.brand b{color:var(--or)}
+nav{display:flex;gap:6px;margin-inline-start:auto}
+nav a,.btn{padding:8px 20px;border-radius:30px;font-weight:700;border:0;cursor:pointer;font-family:inherit;font-size:17px;color:var(--ink)}
+nav a.on{background:var(--ink);color:var(--bg)}
+.btn{background:var(--or);color:#26225F;box-shadow:0 5px 0 rgba(0,0,0,.2);display:inline-block}
+.btn.alt{background:var(--card);border:3px solid var(--ink);box-shadow:none}
+main{max-width:1180px;margin:0 auto;padding:36px 5vw 60px}
+h1,h2,h3{line-height:1.2}
+.en{direction:ltr;text-align:left}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;min-height:420px}
+.hero h1{font-size:clamp(44px,7vw,84px);font-weight:800;direction:ltr;text-align:left}
+.hero h1 span:nth-child(1){color:var(--bl)}.hero h1 span:nth-child(2){color:var(--pu)}.hero h1 span:nth-child(3){color:var(--or)}
+.hero p{font-size:22px;margin:14px 0 24px;max-width:520px}
+.stagebox{background:var(--cy);border-radius:36px;padding:30px;position:relative;min-height:340px;display:flex;align-items:center;justify-content:center}
+.b{display:inline-block;padding:7px 18px;border-radius:10px;font-weight:700;color:#fff;border-bottom:5px solid rgba(0,0,0,.22);direction:ltr;font-size:17px}
+.b i{font-style:normal;background:#fff;color:#26225F;border-radius:20px;padding:0 10px;margin:0 3px}
+.mo{background:#4C97FF}.lo{background:#9966FF}.so{background:#CF63CF}.ev{background:#FFBF00;color:#26225F}.co{background:#FFAB19;color:#26225F}.se{background:#5CB1D6;color:#26225F}.op{background:#59C059}.va{background:#FF8C1A;color:#26225F}.my{background:#FF6680}.df{background:#1FA9BC}
+.float{position:absolute;transform:rotate(-5deg)}
+.sec{margin-top:56px}
+.sec>h2{font-size:34px;margin-bottom:6px}
+.sub{color:var(--mut);margin-bottom:22px}
+.prog{height:22px;background:var(--line);border-radius:20px;overflow:hidden}
+.prog div{height:100%;background:var(--or);border-radius:20px;transition:width .5s}
+.journey{display:flex;justify-content:space-between;position:relative;margin-top:30px}
+.journey::before{content:"";position:absolute;top:34px;left:6%;right:6%;border-top:6px dotted var(--line)}
+.stop{position:relative;text-align:center;width:19%}
+.stop .n{width:68px;height:68px;border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:#26225F;border:5px solid var(--bg);box-shadow:0 6px 0 rgba(0,0,0,.16)}
+.stop small{color:var(--mut);display:block;font-size:14px}
+.stop b{direction:ltr;display:block;font-size:15px}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.proj a{padding:22px;border-radius:26px;color:#26225F;font-weight:700;box-shadow:0 8px 0 rgba(0,0,0,.14);display:block}
+.proj h3{font-size:26px;direction:ltr;text-align:left}
+.lv{margin-top:34px;background:var(--card);border-radius:28px;overflow:hidden;box-shadow:0 8px 0 rgba(0,0,0,.08)}
+.lv>div:first-child{padding:20px 28px;color:#26225F;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.lv h2{font-size:30px;direction:ltr}
+.lessons a{display:flex;align-items:center;gap:14px;padding:12px 28px;border-top:2px solid var(--line)}
+.lessons a:hover{background:var(--cy)}
+.chk{width:30px;height:30px;border-radius:50%;border:3px solid var(--mut);flex:none;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800}
+.chk.d{background:#4CBF56;border-color:#4CBF56;color:#fff}
+.lessons .t{font-weight:700;direction:ltr}
+.tag{font-size:13px;padding:2px 12px;border-radius:20px;color:#26225F;font-weight:700;margin-inline-start:auto}
+.lesson{max-width:820px}
+.crumb{color:var(--mut);font-weight:700;margin-bottom:12px;direction:ltr;text-align:left}
+.lesson h1{font-size:50px;direction:ltr;text-align:left;margin-bottom:16px}
+.lesson .box{background:var(--card);border-radius:26px;padding:28px;margin:22px 0;border-right:12px solid var(--or)}
+.lesson .demo{background:var(--cy);border-radius:26px;padding:34px;text-align:center}
+.actions{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.play{display:grid;grid-template-columns:480px 1fr;gap:30px;align-items:start}
+.stage{width:480px;height:330px;max-width:100%;background:#fff;border:6px solid var(--ink);border-radius:18px;position:relative;overflow:hidden}
+.stage .sp{position:absolute;left:50%;top:50%;transition:transform .45s,width .3s;transform-origin:center}
+.bub{position:absolute;background:#fff;color:#26225F;border:4px solid #26225F;border-radius:20px;padding:4px 16px;font-weight:800;direction:ltr;white-space:nowrap}
+.pad{display:flex;flex-wrap:wrap;gap:12px}
+.pad button{font-family:inherit;border:0;cursor:pointer}
+.ro{margin-top:10px;font-weight:700;color:var(--mut);direction:ltr;text-align:left}
+footer{border-top:3px solid var(--line);padding:28px 5vw;display:flex;align-items:center;gap:16px;flex-wrap:wrap;color:var(--mut);font-weight:700}
+footer img{height:38px}
+.theme{background:none;border:2px solid var(--line);border-radius:30px;padding:6px 14px;cursor:pointer;color:var(--ink);font-family:inherit}
+@media(max-width:820px){.hero,.play{grid-template-columns:1fr}.journey{flex-wrap:wrap;gap:18px}.journey::before{display:none}.stop{width:30%}.lesson h1{font-size:36px}}
+</style></head><body>
+<header><a class="brand" href="#home"><svg width="38" height="44" viewBox="0 0 240 290"><path d="M120 62V28" stroke="#1d8a3a" stroke-width="10" stroke-linecap="round"/><path d="M120 34C95 6 62 14 58 32c26 12 50 10 62 2z" fill="#4CBF56"/><path d="M122 30c18-28 56-24 62-2-26 14-50 12-62 2z" fill="#7ED957"/><circle cx="120" cy="170" r="100" fill="#26225F" stroke="#1FA9BC" stroke-width="18"/><circle cx="88" cy="155" r="20" fill="#fff"/><circle cx="152" cy="155" r="20" fill="#fff"/><circle cx="92" cy="157" r="9" fill="#26225F"/><circle cx="148" cy="157" r="9" fill="#26225F"/></svg>SCRATCH <b>ACADEMY</b></a>
+<nav id="nav"></nav><button class="theme" id="th">🌓</button></header>
+<main id="app"></main>
+<footer><span>Made by Nour ♡</span><span class="en">Discover. Learn. Create. Master.</span><span style="margin-inline-start:auto;font-size:14px">منصة تعليمية مستقلة لتعلّم Scratch، مش تابعة لـ MIT أو Scratch Team.</span></footer>
+<script>
+const FLAG='<svg width="18" height="20" viewBox="0 0 34 38" style="vertical-align:-3px;margin:0 3px"><path d="M7 3v34" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M9 5h20l-6 8 6 8H9z" fill="#4CBF56"/></svg>';
+const LC=['#4C97FF','#9966FF','#FFAB19','#CF63CF','#1FA9BC'];
+// lesson: [en, ar, cat, block]
+const D=[
+{n:'SCRATCH EXPLORER',ar:'المستكشفة',L:[
+['What is Scratch?','لغة برمجة مرئية: بتسحبي Blocks وتركّبيها زي الليجو من غير ما تكتبي كود.','ev','when <F> clicked'],
+['History & MIT Media Lab','Scratch اتعمل في MIT Media Lab عشان أي حد يتعلم البرمجة بطريقة إبداعية.'],
+['Scratch Interface','أربع مناطق أساسية: Stage، Sprites، Blocks Palette، Code Area.'],
+['Stage & Sprites','الـ Stage هو المسرح اللي بتحصل عليه الأحداث، والـ Sprite هو الشخصية اللي بتتحكمي فيها.'],
+['Backdrops','الـ Backdrop هو خلفية المسرح. تقدري تختاري من المكتبة أو ترسمي بنفسك.','lo','switch backdrop to [backdrop1]'],
+['Costumes','كل Sprite له Costumes، وتغييرها بسرعة هو اللي بيعمل إحساس الحركة.','lo','next costume'],
+['Sprite Library','مكتبة جاهزة فيها شخصيات كتير. وتقدري كمان ترسمي Sprite أو ترفعي صورة.'],
+['Starting & Saving Projects','ابدئي Project جديد، سمّيه، واحفظيه على حسابك أو على الجهاز.'],
+['Sharing Projects Safely','شاركي من غير بيانات شخصية: اسم مستعار، ومن غير صور أو أرقام، وتجاهلي الغرباء.']]},
+{n:'BLOCK MASTER',ar:'سيّدة البلوكات',L:[
+['Move Steps','بيحرّك الـ Sprite في الاتجاه اللي بيبص عليه.','mo','move [10] steps'],
+['Turn Degrees','بيلفّ الـ Sprite بزاوية.','mo','turn [15] degrees'],
+['Go to x / y','بينقل الـ Sprite لنقطة محددة على المسرح.','mo','go to x: [0] y: [0]'],
+['Glide','حركة ناعمة لنقطة خلال وقت.','mo','glide [1] secs to x: [100] y: [50]'],
+['Change x / y','بيزوّد أو بينقّص الإحداثي.','mo','change x by [10]'],
+['Point in Direction','بيحدد اتجاه البصّ: 90 يمين، 0 فوق.','mo','point in direction [90]'],
+['If on Edge, Bounce','بيرجّع الـ Sprite لما يلمس حرف المسرح.','mo','if on edge, bounce'],
+['Say & Think','بيظهر كلام أو تفكير فوق الـ Sprite.','lo','say [Hello!] for [2] seconds'],
+['Change Size','بيكبّر أو بيصغّر الـ Sprite.','lo','change size by [10]'],
+['Switch Costume','بيغيّر الشكل لـ Costume تانية.','lo','switch costume to [costume2]'],
+['Show & Hide','بيظهر الـ Sprite أو بيخفيه.','lo','hide'],
+['Sound','بيشغّل صوت أو بيتحكم في مستواه.','so','play sound [Meow] until done'],
+['Events','البلوكات اللي بتبدأ الكود: علم أخضر، ضغطة مفتاح، كليك.','ev','when [space] key pressed'],
+['Control: Wait & Repeat','بيتحكم في الوقت والتكرار.','co','repeat [10]'],
+['Control: Forever & If','تكرار للأبد، وقرارات بالشرط.','co','forever'],
+['Sensing','بيحس بالماوس واللمس والكيبورد.','se','touching [mouse-pointer]?'],
+['Ask & Answer','بيسأل المستخدم وياخد إجابته.','se','ask [What is your name?] and wait'],
+['Operators','حساب وأرقام عشوائية ومقارنات.','op','pick random [1] to [10]'],
+['Variables','بتخزّني قيمة زي السكور أو الأرواح.','va','set [score] to [0]'],
+['Change a Variable','بتزوّدي أو بتنقّصي القيمة.','va','change [score] by [1]']]},
+{n:'GAME MAKER',ar:'صانعة الألعاب',L:[
+['Plan Your Game','فكرة، هدف، قواعد، وإزاي تكسبي وتخسري.'],
+['Control with Keys','حرّكي الشخصية بالأسهم.','ev','when [right arrow] key pressed'],
+['Collect Items & Score','لمس العملة بيزوّد السكور.','va','change [score] by [1]'],
+['Enemies & Lives','لمس العدو بيقلّل الأرواح.','se','touching [Enemy]?'],
+['Win & Lose Screens','شاشات الفوز والخسارة بالـ Backdrops.','lo','switch backdrop to [You Win]'],
+['Levels & Difficulty','تصعيب اللعبة بالتدريج.','co','forever']]},
+{n:'STORY & ANIMATION STUDIO',ar:'استوديو القصص والرسوم',L:[
+['Storyboarding','ارسمي المشاهد على ورق قبل ما تبني.'],
+['Broadcast Messages','الـ Sprites بتكلم بعض برسائل.','ev','broadcast [message1]'],
+['Dialogue','حوار بين شخصيتين بالترتيب.','lo','say [Hi!] for [2] seconds'],
+['Scene Changes','انتقال بين المشاهد بالـ Backdrops.','ev','when I receive [scene2]'],
+['Costume Animation','مشي وحركة بتبديل الـ Costumes.','lo','next costume'],
+['Clones','نسخ كتير من نفس الـ Sprite.','co','create clone of [myself]']]},
+{n:'CREATOR LAB',ar:'معمل المبدعة',L:[
+['Pick Your Idea','اختاري مشروعك الكبير بنفسك.'],
+['Design Document','اكتبي الفكرة والشخصيات والقواعد.'],
+['Build in Small Steps','ابني جزء جزء وجرّبي كل مرة.'],
+['Debugging','اكتشفي الأخطاء وصلّحيها.'],
+['My Blocks','اعملي بلوك خاص بيك.','my','define [jump]'],
+['Playtest & Improve','خلّي حد يجرّب مشروعك وحسّنيه.'],
+['Publish Your Project','شاركي مشروعك بأمان.']]}];
+const FEAT=[['A Game','لعبة بتجمّعي فيها عملات وبتهربي من عدو','#4C97FF',3],['An Interactive Story','قصة القرار فيها بإيدك','#9966FF',4],['An Animation','شخصيات بتتحرك وتتكلم','#FFAB19',4],['A Quiz','اختبار بسكور ونتيجة','#59C059',5]];
+let prog=[];try{prog=JSON.parse(localStorage.getItem('sa-prog')||'[]')}catch(e){}
+const save=()=>{try{localStorage.setItem('sa-prog',JSON.stringify(prog))}catch(e){}};
+const done=id=>prog.includes(id);
+const all=[];D.forEach((l,i)=>l.L.forEach((x,j)=>all.push(`${i+1}-${j+1}`)));
+const pct=a=>a.length?Math.round(a.filter(done).length/a.length*100):0;
+const blk=(c,t)=>`<span class="b ${c}">${t.replace(/\[(.*?)\]/g,'<i>$1</i>').replace('<F>',FLAG)}</span>`;
+const next=()=>all.find(i=>!done(i))||'1-1';
+const sprite=(w=90)=>`<svg width="${w}" viewBox="0 0 240 290"><path d="M120 62V28" stroke="#1d8a3a" stroke-width="10" stroke-linecap="round"/><path d="M120 34C95 6 62 14 58 32c26 12 50 10 62 2z" fill="#4CBF56"/><path d="M122 30c18-28 56-24 62-2-26 14-50 12-62 2z" fill="#7ED957"/><circle cx="120" cy="170" r="100" fill="#26225F" stroke="#1FA9BC" stroke-width="18"/><circle cx="88" cy="155" r="22" fill="#fff"/><circle cx="152" cy="155" r="22" fill="#fff"/><circle cx="94" cy="158" r="10" fill="#26225F"/><circle cx="146" cy="158" r="10" fill="#26225F"/><path d="M86 200q34 36 68 0" stroke="#fff" stroke-width="9" fill="none" stroke-linecap="round"/></svg>`;
+function home(){const p=pct(all);return `<section class="hero"><div><h1><span>Discover.</span> <span>Learn.</span> <span>Create.</span> <span style="color:#1FA9BC">Master.</span></h1><p>أهلاً يا مبدعة! هنا رحلتك الكاملة مع Scratch، من أول Block لحد مشروعك الكبير بإيدك.</p><a class="btn" href="#lesson-${next()}">${p?'كمّلي من حيث وقفتي':'ابدئي رحلتك'}</a> <a class="btn alt" href="#play">جرّبي الـ Playground</a></div>
+<div class="stagebox"><div class="float" style="top:24px;right:20px">${blk('ev','when <F> clicked')}<br>${blk('mo','move [10] steps')}</div><div class="float" style="bottom:26px;left:20px;transform:rotate(4deg)">${blk('lo','say [Hello!] for [2] seconds')}</div>${sprite(190)}</div></section>
+<section class="sec"><h2>Your Progress</h2><p class="sub">أنهيتي ${all.filter(done).length} من ${all.length} درس</p><div class="prog"><div style="width:${p}%"></div></div></section>
+<section class="sec"><h2>The Learning Journey</h2><p class="sub">خمس مراحل من مبتدئة لمبدعة مستقلة</p><div class="journey">${D.map((l,i)=>`<a class="stop" href="#path"><div class="n" style="background:${LC[i]}">${i+1}</div><b>${l.n}</b><small>${l.ar}</small></a>`).join('')}</div></section>
+<section class="sec"><h2>Featured Projects</h2><p class="sub">دي مشاريع هتقدري تعمليها في آخر الرحلة</p><div class="proj">${FEAT.map(f=>`<a href="#lesson-${f[3]}-1" style="background:${f[2]}"><h3>${f[0]}</h3><p>${f[1]}</p></a>`).join('')}</div></section>`}
+function path(){return `<h1 class="en" style="font-size:54px">LEARNING PATH</h1><p class="sub">5 مستويات، كل درس فيه شرح وبلوك وتجربة.</p>`+D.map((l,i)=>{const ids=l.L.map((_,j)=>`${i+1}-${j+1}`);return `<div class="lv"><div style="background:${LC[i]}"><h2>LEVEL 0${i+1} — ${l.n}</h2><b>${pct(ids)}%</b></div><div class="lessons">${l.L.map((x,j)=>`<a href="#lesson-${i+1}-${j+1}"><span class="chk ${done(ids[j])?'d':''}">${done(ids[j])?'✓':''}</span><span class="t">${x[0]}</span>${x[2]?`<span class="tag" style="background:var(--cy)">Block</span>`:''}</a>`).join('')}</div></div>`}).join('')}
+function lesson(a,b){const l=D[a-1],x=l&&l.L[b-1];if(!x)return path();const id=`${a}-${b}`,nx=l.L[b]?`${a}-${b+1}`:D[a]?`${a+1}-1`:null;
+return `<div class="lesson"><div class="crumb">Level ${a} · ${l.n} · ${b}/${l.L.length}</div><h1>${x[0]}</h1><p style="font-size:22px">${x[1]}</p>${x[3]?`<div class="demo">${blk(x[2],x[3])}</div>`:''}<div class="box"><b>جرّبي بنفسك:</b> افتحي Scratch وطبّقي الفكرة دي، وغيّري الأرقام وشوفي إيه اللي بيتغير.</div><div class="actions"><button class="btn" onclick="tog('${id}')">${done(id)?'✓ خلصت الدرس':'علّميه خلصان'}</button>${nx?`<a class="btn alt" href="#lesson-${nx}">الدرس اللي بعده</a>`:''}<a class="btn alt" href="#path">المسار</a></div></div>`}
+const S={x:0,y:0,d:90,s:100,c:0};let tm;
+const acts=[['mo','move [10] steps',()=>{const r=S.d*Math.PI/180;S.x+=Math.sin(r)*10;S.y+=Math.cos(r)*10}],['mo','turn [15] degrees',()=>S.d+=15],['mo','go to x: [0] y: [0]',()=>{S.x=0;S.y=0}],['mo','change x by [50]',()=>S.x+=50],['mo','change y by [50]',()=>S.y+=50],['mo','if on edge, bounce',()=>{S.d=(S.d+180)%360;S.x=Math.max(-190,Math.min(190,S.x))}],['lo','say [Hello!] for [2] seconds',()=>bub('Hello!')],['lo','think [Hmm...] for [2] seconds',()=>bub('Hmm...')],['lo','change size by [10]',()=>S.s=Math.min(250,S.s+10)],['lo','change size by [-10]',()=>S.s=Math.max(30,S.s-10)],['lo','next costume',()=>S.c=(S.c+60)%360]];
+function bub(t){const e=document.getElementById('bub');e.textContent=t;e.style.display='block';clearTimeout(tm);tm=setTimeout(()=>e.style.display='none',2000)}
+function draw(){const e=document.getElementById('sp');if(!e)return;S.x=Math.max(-230,Math.min(230,S.x));S.y=Math.max(-150,Math.min(150,S.y));e.style.width=(80*S.s/100)+'px';e.style.transform=`translate(calc(-50% + ${S.x}px),calc(-50% - ${S.y}px)) rotate(${S.d-90}deg)`;e.style.filter=`hue-rotate(${S.c}deg)`;document.getElementById('ro').textContent=`x: ${Math.round(S.x)}  y: ${Math.round(S.y)}  direction: ${Math.round(S.d)}  size: ${S.s}`;const b=document.getElementById('bub');b.style.left=`calc(50% + ${S.x}px)`;b.style.top=`calc(50% - ${S.y}px - ${50*S.s/100+34}px)`}
+function playg(){return `<h1 class="en" style="font-size:54px">PLAYGROUND</h1><p class="sub">دوسي على البلوكات وشوفي الـ Sprite بيعمل إيه على المسرح.</p><div class="play"><div><div class="stage"><div class="sp" id="sp">${sprite(80)}</div><div class="bub" id="bub" style="display:none;transform:translateX(-50%)"></div></div><div class="ro" id="ro"></div></div><div class="pad">${acts.map((a,i)=>`<button onclick="act(${i})">${blk(a[0],a[1])}</button>`).join('')}<button class="btn alt" onclick="Object.assign(S,{x:0,y:0,d:90,s:100,c:0});draw()">Reset</button></div></div>`}
+function act(i){acts[i][2]();draw()}
+function tog(id){const k=prog.indexOf(id);k<0?prog.push(id):prog.splice(k,1);save();render()}
+function render(){const h=(location.hash||'#home').slice(1),m=h.match(/^lesson-(\d+)-(\d+)$/);let t=h==='path'?path():h==='play'?playg():m?lesson(+m[1],+m[2]):home();document.getElementById('app').innerHTML=t;document.getElementById('nav').innerHTML=[['home','الرئيسية'],['path','المسار'],['play','Playground']].map(n=>`<a href="#${n[0]}" class="${(m?'path':h)===n[0]?'on':''}">${n[1]}</a>`).join('');if(h==='play')draw();scrollTo(0,0)}
+document.getElementById('th').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'};
+addEventListener('hashchange',render);render();
+</script></body></html>
